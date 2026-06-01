@@ -1,18 +1,15 @@
 #include <iostream>
 #include <algorithm>
-
 #include "TPopulation.h"
 
 using namespace std;
 
 unsigned int TPopulation::_id = 0;
 
-TPopulation::TPopulation(unsigned int cands_count)
+TPopulation::TPopulation(unsigned int cands_count) : candidated_count(cands_count)
 {
 	_id++;
-	candidated_count = cands_count;
-
-	for (int i = 0; i < cands_count; i++) candidates.push_back({});
+	for (int i = 0; i < candidated_count; i++) candidates.push_back({});
 }
 
 void TPopulation::calculate()
@@ -31,7 +28,7 @@ void TPopulation::calculate()
 	this->best_val = best_val;
 }
 
-TCandidate TPopulation::get_best_candidate()
+TCandidate TPopulation::get_best_candidate() const
 {
 	int i = 0;
 
@@ -40,7 +37,7 @@ TCandidate TPopulation::get_best_candidate()
 	return candidates[i];
 }
 
-void TPopulation::info()
+void TPopulation::info() const
 {
 	cout << "\n\n";
 	cout << "===== POPULATION #" << _id << " =====\n";

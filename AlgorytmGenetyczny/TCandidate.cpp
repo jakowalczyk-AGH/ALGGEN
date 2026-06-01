@@ -1,13 +1,11 @@
 #include <iostream>
 #include "math.h"
-
 #include "TCandidate.h"
 
 using namespace std;
 
-TCandidate::TCandidate()
+TCandidate::TCandidate() : mark(0)
 {
-	mark = 0;
 	rand_gens_val();
 }
 
@@ -27,7 +25,7 @@ void TCandidate::rand_gens_val()
 	}
 }
 
-void TCandidate::info()
+void TCandidate::info() const
 {
 	cout << "\n\n";
 	cout << "======================\n";

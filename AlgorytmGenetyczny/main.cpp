@@ -8,6 +8,8 @@
 #include "TPopulation.h"
 #include "TKlasa.h"
 #include "TAlgorithm.h"
+#include "TCandidate_Zad1.h"
+#include "TCandidate_Zad2.h"
 
 using namespace std;
 
@@ -15,42 +17,93 @@ int main()
 {
 	srand(time(0));
 
-	TParam gen{ "gen1", 0, 10, 0.1 };
-	gen.info();
+	vector<TCandidate*> candidates;
 
-	TParam gen_copy(gen);
-	gen_copy.info();
+	candidates.push_back(new TCandidate{});
+	candidates.push_back(new TCandidate_Zad1{});
+	candidates.push_back(new TCandidate_Zad2{});
 
-	std::cout << "\n\n";
+	for (int i = 0; i < candidates.size(); i++)
+	{
+		candidates[i]->rate();
+		candidates[i]->info();
+	}
 
-	TCandidate os1{};
-	os1.rate();
-	os1.info();
-
-	TCandidate os_copy{ os1 };
-	os_copy.info();
-
-
-	std::cout << "\n\n";
-
-	TPopulation pop1{ 5 };
-	pop1.calculate();
-	pop1.info();
-
-	TPopulation pop_copy{ pop1 };
-	pop_copy.info();
+	for (int i = 0; i < candidates.size(); i++)
+	{
+		delete candidates[i];
+	}
 
 	std::cout << "\n\n\n";
 	return 0;
-	cout << "\n\n\n";
-	return 0;
 
-	unsigned int candidates_count = 5;
-	unsigned int max_population_count = 20;
-	unsigned int min_improvement_proc = 2;
+	//TCandidate* os = new TCandidate_Zad1{};
+	//os->rate();
+	//os->info();
+	//delete os;
 
-	TAlgorithm task{ candidates_count, max_population_count, min_improvement_proc };
-	task.run();
+	//os = new TCandidate_Zad2{};
+	//os->rate();
+	//os->info();
+	//delete os;
+
+	//std::cout << "\n\n\n";
+	//return 0;
+
+	//TCandidate_Zad2 os_zad2{};
+	//os_zad2.rate();
+	//os_zad2.info();
+	//
+	//TCandidate_Zad2 os_zad2_copy{ os_zad2 };
+	//os_zad2_copy.rate();
+	//os_zad2_copy.info();
+
+	//TCandidate os_org{};
+	//os_org.rate();
+	//os_org.info();
+	//
+	//TCandidate_Zad1 os_zad1{};
+	//os_zad1.rate();
+	//os_zad1.info();
+
+	//std::cout << "\n\n\n";
+
+	//TParam gen{ "gen1", 0, 10, 0.1 };
+	//gen.info();
+
+	//TParam gen_copy(gen);
+	//gen_copy.info();
+
+	//std::cout << "\n\n";
+
+	//TCandidate os1{};
+	//os1.rate();
+	//os1.info();
+
+	//TCandidate os_copy{ os1 };
+	//os_copy.info();
+
+
+	//std::cout << "\n\n";
+
+	//TPopulation pop1{ 5 };
+	//pop1.calculate();
+	//pop1.info();
+
+	//TPopulation pop_copy{ pop1 };
+	//pop_copy.info();
+
+	//std::cout << "\n\n\n";
+	//return 0;
+	//cout << "\n\n\n";
+	//return 0;
+
+	//unsigned int candidates_count = 5;
+	//unsigned int max_population_count = 20;
+	//unsigned int min_improvement_proc = 2;
+
+	//TAlgorithm task{ candidates_count, max_population_count, min_improvement_proc };
+	//task.run();
 
 	//TKlasa* wsk_obiekt1 = new TKlasa(-3);
 	//TKlasa* wsk_obiekt2 = new TKlasa(0);
