@@ -6,31 +6,42 @@
 
 using namespace std;
 
-TParam::TParam(double x_start, double x_end, double dx)
+TParam::TParam(double x_start, double x_end, double dx) : name("")
 {
 	set_range(x_start, x_end, dx);
-	name = "";
+	//name = "";
 	set_rand_val();
 }
 
-TParam::TParam(double x_start, double x_end, double dx, double val)
+TParam::TParam(double x_start, double x_end, double dx, double val) : TParam(x_start, x_end, dx)
 {
-	set_range(x_start, x_end, dx);
+	//set_range(x_start, x_end, dx);
 	set_val(val);
-	name = "";
+	//name = "";
 }
 
-TParam::TParam(string name, double x_start, double x_end, double dx)
+TParam::TParam(string name, double x_start, double x_end, double dx) : name(name)
 {
-	this->name = name;
+	//this->name = name;
 	set_range(x_start, x_end, dx);
 	set_rand_val();
 }
 
-TParam::TParam(string name, double x_start, double x_end, double dx, double val)
+TParam::TParam(string name, double x_start, double x_end, double dx, double val) : TParam(name, x_start, x_end, dx)
 {
-	this->name = name;
+	//this->name = name;
+	//set_range(x_start, x_end, dx);
+	set_val(val);
+}
+
+TParam::TParam(const TParam &oryginal) : name{oryginal.get_name()}
+{
+	double x_start = oryginal.get_x_start();
+	double x_end = oryginal.get_x_end();
+	double dx = oryginal.get_dx();
 	set_range(x_start, x_end, dx);
+
+	double val = oryginal.get_val();
 	set_val(val);
 }
 

@@ -15,6 +15,36 @@ int main()
 {
 	srand(time(0));
 
+	TParam gen{ "gen1", 0, 10, 0.1 };
+	gen.info();
+
+	TParam gen_copy(gen);
+	gen_copy.info();
+
+	std::cout << "\n\n";
+
+	TCandidate os1{};
+	os1.rate();
+	os1.info();
+
+	TCandidate os_copy{ os1 };
+	os_copy.info();
+
+
+	std::cout << "\n\n";
+
+	TPopulation pop1{ 5 };
+	pop1.calculate();
+	pop1.info();
+
+	TPopulation pop_copy{ pop1 };
+	pop_copy.info();
+
+	std::cout << "\n\n\n";
+	return 0;
+	cout << "\n\n\n";
+	return 0;
+
 	unsigned int candidates_count = 5;
 	unsigned int max_population_count = 20;
 	unsigned int min_improvement_proc = 2;
@@ -65,55 +95,55 @@ int main()
 	//obiekt2.info();
 	//obiekt3.info();
 
-	TPopulation pop(10);
-	cout << "Zaraz po utworzeniu obiektu klasy TPopulation";
-	pop.info();
-	cout << "\n\n";
+	//TPopulation pop(10);
+	//cout << "Zaraz po utworzeniu obiektu klasy TPopulation";
+	//pop.info();
+	//cout << "\n\n";
 
-	cout << "Po wykonanych obliczeniach";
-	pop.calculate();
-	pop.info();
-	cout << "\n\n";
+	//cout << "Po wykonanych obliczeniach";
+	//pop.calculate();
+	//pop.info();
+	//cout << "\n\n";
 
-	cout << "Najlepszy osobnik:";
-	pop.get_best_candidate().info();
-	
-	TCandidate os1{};
-	os1.rate();
-	os1.info();
+	//cout << "Najlepszy osobnik:";
+	//pop.get_best_candidate().info();
+	//
+	//TCandidate os1{};
+	//os1.rate();
+	//os1.info();
 
-	TParam param1{ 1, 4, 1, 2 };
-	TParam param2{ 10, 20, 3 };
-	TParam param3{ 0, 10, 0.5, 3.3 };
+	//TParam param1{ 1, 4, 1, 2 };
+	//TParam param2{ 10, 20, 3 };
+	//TParam param3{ 0, 10, 0.5, 3.3 };
 
-	// ////////////////////////////////////////
+	//// ////////////////////////////////////////
 
-	cout << "param1";
-	param1.info();
+	//cout << "param1";
+	//param1.info();
 
-	cout << "param2";
-	param2.info();
+	//cout << "param2";
+	//param2.info();
 
-	cout << "param3";
-	param3.info();
+	//cout << "param3";
+	//param3.info();
 
-	// ////////////////////////////////////////
+	//// ////////////////////////////////////////
 
-	param2.set_val(100);
-	param3.set_val(7.5);
+	//param2.set_val(100);
+	//param3.set_val(7.5);
 
-	cout << "===============\n";
-	cout << "AFTER\n";
-	cout << "===============\n\n";
+	//cout << "===============\n";
+	//cout << "AFTER\n";
+	//cout << "===============\n\n";
 
-	cout << "param2";
-	param2.info();
+	//cout << "param2";
+	//param2.info();
 
-	cout << "param3";
-	param3.info();
+	//cout << "param3";
+	//param3.info();
 
-	// ////////////////////////////////////////
+	//// ////////////////////////////////////////
 
-	return 0;
+	//return 0;
 
 }
