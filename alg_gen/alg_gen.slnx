@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="alg_gen/alg_gen.vcxproj" Id="6dacd3d7-3f34-4eec-b89e-0f3a4ed3a242" />
+</Solution>
