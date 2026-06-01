@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="AlgorytmGenetyczny/AlgorytmGenetyczny.vcxproj" Id="2fc5d5b2-99fa-41b0-9c97-abd41bff57f8" />
+</Solution>
