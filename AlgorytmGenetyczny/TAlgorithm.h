@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TPopulation.h"
+/*#include "TPopulation.h"
 
 class TAlgorithm
 {
@@ -23,4 +23,4 @@ private:
 	bool is_stop();
 	bool is_max_population();
 	bool is_min_improvement();
-};
+};*/

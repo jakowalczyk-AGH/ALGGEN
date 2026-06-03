@@ -6,10 +6,22 @@ using namespace std;
 
 unsigned int TPopulation::_id = 0;
 
-TPopulation::TPopulation(unsigned int cands_count) : candidated_count(cands_count)
+TPopulation::TPopulation(const TPopulation& original)
 {
-	_id++;
-	for (int i = 0; i < candidated_count; i++) candidates.push_back({});
+	_id = population_count;
+	population_count++;
+
+	candidated_count = original.candidated_count;
+	best_val = original.get_best_val();
+
+	for (int i = 0; i < candidated_count; i++)
+	{
+		const TCandidate* wsk_os_org = original.get_candidate_wsk(i);
+		TCandidate copy{ *wsk_os_org };
+		candidates.push_back(copy);
+	}
+
+	cout << "liczba osobnikow: " << candidates.size() << endl;
 }
 
 void TPopulation::calculate()

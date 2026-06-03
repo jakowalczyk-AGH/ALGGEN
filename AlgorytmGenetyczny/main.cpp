@@ -10,6 +10,7 @@
 #include "TAlgorithm.h"
 #include "TCandidate_Zad1.h"
 #include "TCandidate_Zad2.h"
+#include "TCandidate_Zad3.h"
 
 using namespace std;
 
@@ -17,25 +18,41 @@ int main()
 {
 	srand(time(0));
 
-	vector<TCandidate*> candidates;
+	TCandidate_Zad1 os_zad1{};
+	os_zad1.rate();
+	os_zad1.info();
 
-	candidates.push_back(new TCandidate{});
-	candidates.push_back(new TCandidate_Zad1{});
-	candidates.push_back(new TCandidate_Zad2{});
 
-	for (int i = 0; i < candidates.size(); i++)
-	{
-		candidates[i]->rate();
-		candidates[i]->info();
-	}
+	TCandidate_Zad2 os_zad2{};
+	os_zad2.rate();
+	os_zad2.info();
 
-	for (int i = 0; i < candidates.size(); i++)
-	{
-		delete candidates[i];
-	}
+	TCandidate_Zad3 os_zad3{};
+	os_zad3.rate();
+	os_zad3.info();
 
 	std::cout << "\n\n\n";
 	return 0;
+
+	//vector<TCandidate*> candidates;
+
+	//candidates.push_back(new TCandidate{});
+	//candidates.push_back(new TCandidate_Zad1{});
+	//candidates.push_back(new TCandidate_Zad2{});
+
+	//for (int i = 0; i < candidates.size(); i++)
+	//{
+	//	candidates[i]->rate();
+	//	candidates[i]->info();
+	//}
+
+	//for (int i = 0; i < candidates.size(); i++)
+	//{
+	//	delete candidates[i];
+	//}
+
+	//std::cout << "\n\n\n";
+	//return 0;
 
 	//TCandidate* os = new TCandidate_Zad1{};
 	//os->rate();
